@@ -3,6 +3,38 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+
+venv/
+venv310/
+venv310_nnunet/
+.venv-nonlinear/
+.DS_Store
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+*.csv
+*.tsv
+models/
+pyCausalFS/
+preprocessed/
+statistical_filtered/
+relaxed_filtered_datasets/
+datasets_4_modalities/
+rna_aligned_raw.csv
+merged/
+raw/
+figures/
+mb_results/
+datasets_onlyCauses_4_modalities/
+datasets_onlyCauses_4_modalities_CLEAN/
+final_causal_results/
+MB2_FINAL/
+multimodal_mb_results/
+multimodal_mb_results_COMPREHENSIVE/
+multimodal_mb_results_IMPROVED/
+mb_production_results/
+relaxed_filtered_datasets/
+
 # C extensions
 *.so
 
