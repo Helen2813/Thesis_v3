@@ -1,0 +1,24 @@
+Algorithm: HITON-MB_poolB_a01
+C-index:   0.7873
+AUC-5yr:   0.8676
+
+CLIN_ajcc_staging_system_edition.diagnoses_5th
+CLIN_ajcc_staging_system_edition.diagnoses_6th
+CLIN_age_at_index.demographic
+CLIN_treatment_or_therapy.treatments.diagnoses_['yes', 'yes']
+CLIN_ajcc_pathologic_n.diagnoses_N0 (i-)
+RNA_ENSG00000264589.4
+METH_cg19851563
+CLIN_ajcc_staging_system_edition.diagnoses_4th
+CLIN_treatment_or_therapy.treatments.diagnoses_['not reported', 'not reported']
+CLIN_ajcc_pathologic_n.diagnoses_N1b
+PROT_4EBP1
+PROT_ZAP-70
+CLIN_ajcc_pathologic_t.diagnoses_T4b
+CLIN_tissue_or_organ_of_origin.diagnoses_Lower-inner quadrant of breast
+CLIN_tissue_or_organ_of_origin.diagnoses_Breast, NOS
+CLIN_ajcc_pathologic_stage.diagnoses_Stage III
+CLIN_ajcc_pathologic_n.diagnoses_NX
+METH_cg00101629
+CLIN_ajcc_pathologic_stage.diagnoses_Stage IV
+CLIN_ajcc_pathologic_m.diagnoses_M1
