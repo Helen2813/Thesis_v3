@@ -1,0 +1,11 @@
+{
+  "strategy_id": "S130",
+  "description": "Cox Penalized (pen=0.05, top-87)",
+  "penalizer": 0.05,
+  "top_n": 87,
+  "variant": "top_n_mi",
+  "n_features": 87,
+  "c_index": 0.7200032614818987,
+  "auc_5y": 0.7639440774145682,
+  "mod_counts": "{'rna': 66, 'clinical': 3, 'mutations': 18}"
+}

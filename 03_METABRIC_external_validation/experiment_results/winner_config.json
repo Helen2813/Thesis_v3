@@ -1,0 +1,14 @@
+{
+  "dataset": "min200",
+  "algorithm": "IAMB",
+  "alpha": 0.2,
+  "n_raw": 87,
+  "c_index": 0.7196860082426543,
+  "auc_5y": 0.7639440774145682,
+  "time_min": 1.7032719453175862,
+  "mod_counts": {
+    "clinical": 3,
+    "rna": 66,
+    "mutations": 18
+  }
+}
