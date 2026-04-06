@@ -1,0 +1,19 @@
+{
+  "best_experiment": "EXP10_SMOTE",
+  "best_model": "CausalForestDML",
+  "description": "SMOTE oversampling Y=1 to reduce 1:10 imbalance",
+  "config": {
+    "name": "EXP10_SMOTE",
+    "description": "SMOTE oversampling Y=1 to reduce 1:10 imbalance",
+    "model_y": "rf",
+    "model_t": "rf",
+    "n_est_cf": 300,
+    "cv": 5,
+    "ps_trim": null,
+    "reweight": false,
+    "smote": true,
+    "min_leaf": 10,
+    "max_depth": 6,
+    "cf_min_leaf": 10
+  }
+}

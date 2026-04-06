@@ -1,0 +1,12 @@
+{
+  "algorithm": "IAMB",
+  "alpha": 0.05,
+  "mb_min_threshold": 200,
+  "n_input_features": 116,
+  "n_raw_mb_genes": 4,
+  "n_causal_genes": 116,
+  "mean_mi": 0.001385526140590607,
+  "max_mi": 0.024452178944263103,
+  "c_index": 0.4807261244700092,
+  "time_sec": 0.2818732261657715
+}
