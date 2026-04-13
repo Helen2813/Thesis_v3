@@ -1,0 +1,8 @@
+{
+  "placebo_mean_ATE_LinearDML": -0.003737,
+  "placebo_mean_ATE_CausalForestDML": -0.005621,
+  "placebo_std_LinearDML": 0.008842,
+  "placebo_std_CausalForestDML": 0.010487,
+  "placebo_pass": "PASS",
+  "n_placebo_runs": 5
+}

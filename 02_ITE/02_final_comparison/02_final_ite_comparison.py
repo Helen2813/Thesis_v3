@@ -284,7 +284,6 @@ with tqdm(total=total_jobs, desc="  Computing metrics") as pbar:
             atc, atc_lo, atc_hi = bootstrap_ci_fn(ite, mask=T_arm==0)
             fracs, uplifts, auuc, qini = compute_auuc_qini(ite, T_arm, Y_arm)
             pv = policy_value(ite, T_arm, Y_arm, X_arm)
-            rs = r_score_fn(ite, X_arm, T_arm, Y_arm)
 
             m = {
                 'ite': ite, 'fracs': fracs, 'uplifts': uplifts,
@@ -294,8 +293,6 @@ with tqdm(total=total_jobs, desc="  Computing metrics") as pbar:
                 'ATC': atc, 'ATC_lo': atc_lo, 'ATC_hi': atc_hi,
                 # ── Ranking / uplift ──
                 'AUUC': auuc, 'Qini': qini,
-                # ── Model quality ──
-                'R_score': rs,
                 # ── Policy ──
                 'policy':    pv['policy'],
                 'treat_all': pv['treat_all'],
@@ -326,13 +323,16 @@ rows = []
 for mname in all_ite:
     for tc in T_cols:
         m   = metrics_all[mname][tc]
+        # FIX: recompute T_arm per arm — previously used stale value from last loop iteration
+        _mask  = SUBGROUP_MASKS[tc]
+        _T_arm = T_matrix[tc].values[_mask].astype(int)
         sig_ate = '✓' if not (m['ATE_lo']<0<m['ATE_hi']) else '○'
         sig_att = '✓' if not (m['ATT_lo']<0<m['ATT_hi']) else '○'
         row = {
             'Model':            mname,
             'Treatment Arm':    TREATMENT_LABELS[tc],
-            'N treated':        int(T_arm.sum()),      # within subgroup
-            'N control':        int((T_arm==0).sum()),  # within subgroup
+            'N treated':        int(_T_arm.sum()),
+            'N control':        int((_T_arm==0).sum()),
             # Effect estimates
             'ATE':              round(m['ATE'],5),
             'ATE_95CI':         f"[{m['ATE_lo']:+.4f}, {m['ATE_hi']:+.4f}]",
@@ -342,8 +342,6 @@ for mname in all_ite:
             # Ranking quality
             'AUUC':             round(m['AUUC'],6),
             'Qini':             round(m['Qini'],6),
-            # Model quality
-            'R_score':          round(m['R_score'],4) if not np.isnan(m['R_score']) else 'n/a',
             # Policy
             'Policy_value':     round(m['policy'],4),
             'Treat_all':        round(m['treat_all'],4),
@@ -376,7 +374,6 @@ for tc in T_cols:
         r[f'{pfx}_ATE_CI']    = f"[{m['ATE_lo']:+.4f},{m['ATE_hi']:+.4f}]"
         r[f'{pfx}_AUUC']      = round(m['AUUC'],5)
         r[f'{pfx}_Qini']      = round(m['Qini'],5)
-        r[f'{pfx}_R_score']   = round(m['R_score'],4) if not np.isnan(m['R_score']) else np.nan
         r[f'{pfx}_Benefit_%'] = round(m['pct_benefit'],1)
     thesis_rows.append(r)
 
@@ -453,9 +450,13 @@ with tqdm(total=len(fig_jobs), desc="  Figures") as pfig:
         ax.errorbar(names, ates, yerr=[lo_e, hi_e],
                     fmt='none', color='black', capsize=6, linewidth=2)
         ax.axhline(0, color='gray', linestyle='--', linewidth=1.2)
-        ax.set_title(TREATMENT_LABELS[tc][:30], fontsize=9, fontweight='bold')
+        _m2  = SUBGROUP_MASKS[tc]
+        _T2  = T_matrix[tc].values[_m2].astype(int)
+        _n1  = int(_T2.sum()); _n0 = int((_T2==0).sum())
+        ax.set_title(f"{TREATMENT_LABELS[tc][:28]}\n(treated={_n1}, control={_n0})",
+                     fontsize=9, fontweight='bold')
         ax.set_xticklabels(names, rotation=15, ha='right', fontsize=8)
-        ax.set_ylabel('ATE (Δ mortality risk)' if ax is axes[0] else '')
+        ax.set_ylabel('ATE (\u0394 mortality risk)' if ax is axes[0] else '')
         for bar, val in zip(bars, ates):
             ax.text(bar.get_x()+bar.get_width()/2,
                     val + 0.001 if val>=0 else val-0.003,
@@ -638,16 +639,16 @@ print(f"  Arms        : {len(T_cols)}")
 print(f"  Models      : LinearDML + CausalForestDML")
 print()
 print(f"  {'Arm':<28} {'Model':<18} {'ATE':>8}  {'AUUC':>8}  "
-      f"{'Qini':>8}  {'R':>6}  {'Sig':>4}")
-print(f"  {'-'*28} {'-'*18} {'-'*8}  {'-'*8}  {'-'*8}  {'-'*6}  {'-'*4}")
+      f"{'Qini':>8}  {'PG':>8}  {'Sig':>4}")
+print(f"  {'-'*28} {'-'*18} {'-'*8}  {'-'*8}  {'-'*8}  {'-'*8}  {'-'*4}")
 for tc in T_cols:
     for mname in all_ite:
         m   = metrics_all[mname][tc]
         sig = '✓' if not (m['ATE_lo']<0<m['ATE_hi']) else '○'
-        rs  = f"{m['R_score']:.3f}" if not np.isnan(m['R_score']) else ' n/a'
+        pg  = m['treat_none'] - m['policy']
         print(f"  {TREATMENT_LABELS[tc][:28]:<28} {mname:<18} "
               f"{m['ATE']:>+8.4f}  {m['AUUC']:>8.4f}  "
-              f"{m['Qini']:>8.4f}  {rs:>6}  {sig:>4}")
+              f"{m['Qini']:>8.4f}  {pg:>+8.4f}  {sig:>4}")
 print()
 print("  OUTPUT FILES:")
 for fp in sorted(OUTPUT_DIR.iterdir()):
