@@ -1,0 +1,72 @@
+{
+  "n_patients": 1076,
+  "n_covariates": 24,
+  "covariate_columns": [
+    "CLIN_ajcc_pathologic_stage.diagnoses_Stage IV",
+    "CLIN_ajcc_pathologic_m.diagnoses_M1",
+    "CLIN_ajcc_pathologic_n.diagnoses_N1b",
+    "CLIN_ajcc_staging_system_edition.diagnoses_5th",
+    "CLIN_ajcc_staging_system_edition.diagnoses_6th",
+    "CLIN_age_at_index.demographic",
+    "CLIN_ajcc_pathologic_n.diagnoses_N0 (i-)",
+    "CLIN_ajcc_pathologic_n.diagnoses_NX",
+    "PROT_4EBP1",
+    "PROT_ZAP-70",
+    "METH_cg00101629",
+    "CLIN_ajcc_pathologic_t.diagnoses_T4b",
+    "RNA_ENSG00000264589.4",
+    "CLIN_tissue_or_organ_of_origin.diagnoses_Lower-inner quadrant of breast",
+    "CLIN_tissue_or_organ_of_origin.diagnoses_Breast, NOS",
+    "METH_cg19851563",
+    "CLIN_ajcc_staging_system_edition.diagnoses_4th",
+    "CLIN_ajcc_pathologic_stage.diagnoses_Stage III",
+    "pathology_details.consistent_pathology_review",
+    "pathology_details.lymph_nodes_positive",
+    "pathology_details.lymph_nodes_tested",
+    "ER_status",
+    "HER2_status",
+    "PR_status"
+  ],
+  "primary_treatment_col": "T",
+  "primary_outcome_col": "Y_died_5yr",
+  "treatment_prevalence": 0.48698884758364314,
+  "outcome_prevalence": 0.09293680297397769,
+  "outcome_horizon_days": 1825,
+  "smd_mean": 0.11660313536035398,
+  "smd_max": 0.36210435958100196,
+  "mice_imputed_cols": [
+    "pathology_details.lymph_nodes_positive",
+    "pathology_details.lymph_nodes_tested",
+    "ER_status",
+    "HER2_status",
+    "PR_status"
+  ],
+  "median_imputed_cols": [],
+  "continuous_scaled_cols": [
+    "CLIN_age_at_index.demographic",
+    "PROT_4EBP1",
+    "PROT_ZAP-70",
+    "METH_cg00101629",
+    "RNA_ENSG00000264589.4",
+    "METH_cg19851563",
+    "pathology_details.lymph_nodes_positive",
+    "pathology_details.lymph_nodes_tested",
+    "ER_status",
+    "HER2_status",
+    "PR_status"
+  ],
+  "class_weight_balanced": {
+    "0": 0.5512295081967213,
+    "1": 5.38
+  },
+  "imbalance_ratio": 9.76,
+  "treatment_arms": {
+    "T": "any treatment (original)",
+    "T_hormone": "Hormone Therapy from clinical.tsv",
+    "T_hormone_excl": "Hormone Therapy ONLY (no chemo, no targeted)",
+    "T_chemo": "Chemotherapy from clinical.tsv",
+    "T_targeted": "Targeted Molecular Therapy from clinical.tsv",
+    "T_radiation": "Radiation from clinical.tsv",
+    "source_file": "C:\\Users\\olegk\\Desktop\\Thesis_v3\\data\\drags\\clinical.tsv"
+  }
+}
