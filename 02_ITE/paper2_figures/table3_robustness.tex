@@ -1,0 +1,16 @@
+\begin{table}[htbp]
+\centering
+\caption{Robustness summary across treatment arms}
+\label{tab:robustness}
+\begin{tabular}{lllll}
+\toprule
+Arm & Estimator & Seed stability & Direction & Interpretation \\
+\midrule
+Chemotherapy (TNBC)      & All 3      & 100\% protective & Protective & Strong causal signal \\
+Hormone therapy (ER+/PR+) & All 3     & 97\% protective  & Protective & Attenuated; residual confounding \\
+Targeted therapy (HER2+) & All 3      & 93\% protective  & Protective & Exploratory; small N \\
+\midrule
+\multicolumn{5}{l}{\textit{Falsification: Hormone therapy in TNBC: 0\% protective across all estimators}} \\
+\bottomrule
+\end{tabular}
+\end{table}

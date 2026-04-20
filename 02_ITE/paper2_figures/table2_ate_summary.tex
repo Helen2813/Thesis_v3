@@ -1,0 +1,20 @@
+\begin{table}[htbp]
+\centering
+\caption{Treatment effect estimates by arm and estimator (baseline variant, 10 seeds)}
+\label{tab:ate_results}
+\begin{tabular}{llllrrllll}
+\toprule
+Arm & Subgroup & Estimator & N\_treat & N\_ctrl & Median ATE & IQR & Direction & Stable \\
+\midrule
+Chemotherapy (TNBC) & TNBC ? T_chemo & LinearDML & 148 & 78 & -0.1036 & [-0.1102, -0.0985] & Protective & True \\
+Chemotherapy (TNBC) & TNBC ? T_chemo & CausalForestDML & 148 & 78 & -0.1184 & [-0.1281, -0.1053] & Protective & True \\
+Chemotherapy (TNBC) & TNBC ? T_chemo & LinearDRLearner & 148 & 78 & -0.0947 & [-0.0995, -0.0904] & Protective & True \\
+Hormone therapy (ER+/PR+ HER2-) & ER+/PR+ HER2- ? T_hormone & LinearDML & 399 & 258 & -0.0241 & [-0.0257, -0.0223] & Protective & True \\
+Hormone therapy (ER+/PR+ HER2-) & ER+/PR+ HER2- ? T_hormone & CausalForestDML & 399 & 258 & -0.0098 & [-0.0136, -0.0076] & Protective & True \\
+Hormone therapy (ER+/PR+ HER2-) & ER+/PR+ HER2- ? T_hormone & LinearDRLearner & 399 & 258 & -0.0117 & [-0.0122, -0.0111] & Protective & True \\
+Targeted therapy (HER2+ chemo) & HER2+ chemo ? T_targeted & LinearDML & 25 & 90 & -0.0428 & [-0.0507, -0.0319] & Protective & True \\
+Targeted therapy (HER2+ chemo) & HER2+ chemo ? T_targeted & CausalForestDML & 25 & 90 & -0.0572 & [-0.0622, -0.0533] & Protective & True \\
+Targeted therapy (HER2+ chemo) & HER2+ chemo ? T_targeted & LinearDRLearner & 25 & 90 & -0.0367 & [-0.0412, -0.0328] & Protective & True \\
+\bottomrule
+\end{tabular}
+\end{table}
