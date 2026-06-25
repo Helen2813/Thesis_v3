@@ -1,0 +1,27 @@
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\caption{Multivariate Cox regression for the interpretable components of the final Markov Blanket-derived signature. Continuous variables are standardized, so their hazard ratios are reported per one standard deviation. Sparse administrative or site indicators were excluded from this inferential table to reduce separation effects.}
+\label{tab:multivariate_cox_signature}
+\begin{tabular}{p{0.34\textwidth}llccc}
+\hline
+Feature & Modality & Scale & HR & 95\% CI & p-value \\
+\hline
+ENSG00000264589.4 & RNA & per 1 SD & $0.679$ & $(0.570--0.809)$ & $<0.001$ \
+treatment\_or\_therapy\_['not reported', 'not reported'] & Clinical & category vs reference & $2.972$ & $(1.813--4.873)$ & $<0.001$ \
+age\_at\_index & Clinical & per 1 SD & $1.377$ & $(1.150--1.649)$ & $<0.001$ \
+ZAP-70 & Protein & per 1 SD & $0.706$ & $(0.579--0.862)$ & $<0.001$ \
+cg19851563 & Methylation & per 1 SD & $0.814$ & $(0.683--0.970)$ & $0.022$ \
+ajcc\_pathologic\_n\_N0 (i-) & Clinical & category vs reference & $0.503$ & $(0.275--0.921)$ & $0.026$ \
+ajcc\_pathologic\_n\_N1b & Clinical & category vs reference & $1.630$ & $(0.983--2.703)$ & $0.058$ \
+ajcc\_pathologic\_t\_T4b & Clinical & category vs reference & $1.700$ & $(0.885--3.266)$ & $0.111$ \
+treatment\_or\_therapy\_['yes', 'yes'] & Clinical & category vs reference & $0.735$ & $(0.495--1.091)$ & $0.127$ \
+ajcc\_pathologic\_stage\_Stage IV & Clinical & category vs reference & $2.579$ & $(0.514--12.950)$ & $0.250$ \
+cg00101629 & Methylation & per 1 SD & $0.919$ & $(0.783--1.080)$ & $0.304$ \
+ajcc\_pathologic\_m\_M1 & Clinical & category vs reference & $2.187$ & $(0.478--9.999)$ & $0.313$ \
+ajcc\_pathologic\_n\_NX & Clinical & category vs reference & $1.525$ & $(0.666--3.495)$ & $0.318$ \
+4EBP1 & Protein & per 1 SD & $0.954$ & $(0.823--1.107)$ & $0.538$ \
+\hline
+\end{tabular}
+\end{table}

@@ -1,0 +1,13 @@
+\begin{table}
+\caption{Pipeline-level added-value ablation of clinical and molecular features. Feature selection was re-run separately within clinical-only, omics-only, and clinical-plus-omics candidate spaces.}
+\label{tab:reviewer3_pipeline_ablation}
+\begin{tabular}{llrrrrrllll}
+\toprule
+Model & Algorithm & alpha & Cox penalizer & No. features & Clinical features & Omics features & C-index & 5-year AUC & Δ C-index vs clinical & Δ AUC vs clinical \\
+\midrule
+Clinical-only pipeline & MMMB & 0.050000 & 0.050000 & 20 & 20 & 0 & 0.717 ± 0.042 & 0.797 ± 0.070 & reference & reference \\
+Omics-only pipeline & IAMB & 0.200000 & 0.050000 & 20 & 0 & 20 & 0.729 ± 0.062 & 0.779 ± 0.058 & +0.013 & -0.019 \\
+Clinical + omics pipeline & MMMB & 0.200000 & 0.010000 & 20 & 6 & 14 & 0.773 ± 0.056 & 0.843 ± 0.059 & +0.056 & +0.046 \\
+\bottomrule
+\end{tabular}
+\end{table}

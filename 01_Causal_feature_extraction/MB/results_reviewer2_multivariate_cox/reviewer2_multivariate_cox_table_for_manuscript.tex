@@ -1,0 +1,33 @@
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\caption{Multivariate Cox regression for the final Markov Blanket-derived 20-feature signature. Hazard ratios are estimated with all retained features included in the same model.}
+\label{tab:multivariate_cox_signature}
+\begin{tabular}{p{0.43\textwidth}lccc}
+\hline
+Feature & Modality & HR & 95\% CI & p-value \\
+\hline
+tissue\_or\_organ\_of\_origin\_Lower-inner quadrant of breast & Clinical & $0.000$ & $(0.000--0.000)$ & $<0.001$ \\
+ajcc\_pathologic\_stage\_Stage III & Clinical & $0.000$ & $(0.000--0.000)$ & $<0.001$ \\
+4EBP1 & Protein & $2609.402$ & $(442.926--15372.726)$ & $<0.001$ \\
+cg00101629 & Methylation & $0.006$ & $(0.002--0.020)$ & $<0.001$ \\
+tissue\_or\_organ\_of\_origin\_Breast, NOS & Clinical & $178419278917954664516372398080.000$ & $(505323329338937442304.000--62996179359554440364474330677069742080.000)$ & $<0.001$ \\
+cg19851563 & Methylation & $3.298$ & $(2.118--5.133)$ & $<0.001$ \\
+treatment\_or\_therapy\_['not reported', 'not reported'] & Clinical & $0.000$ & $(0.000--0.000)$ & $<0.001$ \\
+ZAP-70 & Protein & $8.253$ & $(3.014--22.600)$ & $<0.001$ \\
+ajcc\_staging\_system\_edition\_4th & Clinical & $0.002$ & $(0.000--0.151)$ & $0.004$ \\
+ajcc\_pathologic\_n\_N0 (i-) & Clinical & $0.009$ & $(0.000--0.232)$ & $0.005$ \\
+ajcc\_pathologic\_stage\_Stage IV & Clinical & $0.000$ & $(0.000--0.133)$ & $0.012$ \\
+ajcc\_pathologic\_n\_NX & Clinical & $0.000$ & $(0.000--0.043)$ & $0.018$ \\
+ajcc\_staging\_system\_edition\_5th & Clinical & $0.043$ & $(0.003--0.585)$ & $0.018$ \\
+age\_at\_index & Clinical & $0.929$ & $(0.866--0.997)$ & $0.042$ \\
+ajcc\_pathologic\_t\_T4b & Clinical & $0.010$ & $(0.000--10.862)$ & $0.197$ \\
+ajcc\_pathologic\_n\_N1b & Clinical & $0.112$ & $(0.004--3.119)$ & $0.197$ \\
+treatment\_or\_therapy\_['yes', 'yes'] & Clinical & $2.677$ & $(0.568--12.606)$ & $0.213$ \\
+ajcc\_pathologic\_m\_M1 & Clinical & $6.868$ & $(0.126--373.463)$ & $0.345$ \\
+ENSG00000264589.4 & RNA & $0.754$ & $(0.412--1.378)$ & $0.359$ \\
+ajcc\_staging\_system\_edition\_6th & Clinical & $0.791$ & $(0.096--6.513)$ & $0.828$ \\
+\hline
+\end{tabular}
+\end{table}

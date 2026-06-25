@@ -1,0 +1,44 @@
+{
+  "project_dir": "C:\\Users\\olegk\\Desktop\\Thesis_v3\\01_Causal_feature_extraction",
+  "data_file": "C:\\Users\\olegk\\Desktop\\Thesis_v3\\01_Causal_feature_extraction\\MERGE_continuous_outer\\08_composite.csv",
+  "output_dir": "C:\\Users\\olegk\\Desktop\\Thesis_v3\\01_Causal_feature_extraction\\MB\\results_reviewer3_pipeline_mb_ablation",
+  "dataset_name": "08_composite",
+  "event_col": "OS",
+  "duration_col": "OS.time",
+  "n_rows": 1076,
+  "n_events": 150,
+  "n_candidate_features": 443,
+  "n_clinical_candidate_features": 137,
+  "n_omics_candidate_features": 306,
+  "algorithms": [
+    "IAMB",
+    "GSMB",
+    "MMMB"
+  ],
+  "alphas": [
+    0.05,
+    0.1,
+    0.2
+  ],
+  "top_n": 20,
+  "min_mb_features": 20,
+  "mb_candidate_cap": 50,
+  "n_perm": 50,
+  "penalizer_grid": [
+    0.01,
+    0.05,
+    0.1,
+    0.5,
+    1.0,
+    2.0,
+    5.0,
+    10.0
+  ],
+  "cox_rank_penalizer": 5.0,
+  "scale_for_cox": false,
+  "auc_mode": "logistic",
+  "n_folds": 5,
+  "random_seed": 42,
+  "survival_years": 5.0,
+  "runtime_sec": 1537.94
+}

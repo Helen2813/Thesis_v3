@@ -1,0 +1,9 @@
+{
+  "dataset": "08_composite",
+  "top_n": 20,
+  "folds": 5,
+  "seed": 42,
+  "survival_years": 5.0,
+  "eval_penalizer": 5.0,
+  "penalties": "0.01,0.05,0.1,0.5,1,2,5,10"
+}

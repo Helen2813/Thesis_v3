@@ -1,0 +1,18 @@
+{
+  "data_path": "C:\\Users\\olegk\\Desktop\\Thesis_v3\\01_Causal_feature_extraction\\MERGE_continuous_outer\\08_composite.csv",
+  "selected_features_path": "C:\\Users\\olegk\\Desktop\\Thesis_v3\\01_Causal_feature_extraction\\MB\\results_final\\selected_features\\08_composite_features.csv",
+  "samples_used": 1076,
+  "events": 150,
+  "original_signature_features": 20,
+  "features_used_in_inferential_model": 14,
+  "standardized_features": [
+    "CLIN_age_at_index.demographic",
+    "PROT_4EBP1",
+    "PROT_ZAP-70",
+    "METH_cg00101629",
+    "RNA_ENSG00000264589.4",
+    "METH_cg19851563"
+  ],
+  "cox_penalizer_used": 0.0,
+  "concordance_index_full_fit": 0.8071163029680227
+}

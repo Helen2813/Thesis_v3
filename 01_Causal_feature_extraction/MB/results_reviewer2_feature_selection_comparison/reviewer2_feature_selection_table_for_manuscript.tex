@@ -1,0 +1,19 @@
+\begin{table}[htbp]
+\centering
+\small
+\caption{Comparison of the proposed Markov Blanket-derived feature-selection framework with established feature-selection baselines. All methods were evaluated using the same TCGA-BRCA cohort, top-20 selected features, 5-fold cross-validation, and penalized Cox survival modelling.}
+\label{tab:feature_selection_comparison}
+\begin{tabular}{p{0.30\textwidth}p{0.20\textwidth}ccccc}
+\hline
+Method & Selection type & Features & C-index & 5-year AUC & 5-year MCC & $\Delta$ C-index \\
+\hline
+Proposed MB-derived signature & Markov Blanket-derived & 20 & 0.788 ± 0.050 & 0.795 ± 0.042 & 0.418 ± 0.105 & reference \\
+Univariate Cox top-20 & Filter, survival & 20 & 0.788 ± 0.050 & 0.795 ± 0.042 & 0.418 ± 0.105 & reference \\
+LASSO Cox top-20 & Embedded, survival & 20 & 0.778 ± 0.066 & 0.830 ± 0.068 & 0.466 ± 0.132 & -0.011 \\
+Elastic Net Cox top-20 & Embedded, survival & 20 & 0.777 ± 0.066 & 0.826 ± 0.068 & 0.457 ± 0.114 & -0.011 \\
+Random forest importance top-20 & Embedded, 5-year outcome & 20 & 0.765 ± 0.041 & 0.835 ± 0.052 & 0.517 ± 0.129 & -0.023 \\
+Spearman top-20 & Filter, association & 20 & 0.687 ± 0.046 & 0.702 ± 0.029 & 0.345 ± 0.088 & -0.101 \\
+Mutual information top-20 & Filter, 5-year outcome & 20 & 0.680 ± 0.067 & 0.726 ± 0.091 & 0.300 ± 0.133 & -0.108 \\
+\hline
+\end{tabular}
+\end{table}

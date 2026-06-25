@@ -1,0 +1,14 @@
+{
+  "data_path": "C:\\Users\\olegk\\Desktop\\Thesis_v3\\01_Causal_feature_extraction\\MERGE_continuous_outer\\08_composite.csv",
+  "selected_features_path": "C:\\Users\\olegk\\Desktop\\Thesis_v3\\01_Causal_feature_extraction\\MB\\results_final\\selected_features\\08_composite_features.csv",
+  "output_dir": "C:\\Users\\olegk\\Desktop\\Thesis_v3\\01_Causal_feature_extraction\\MB\\results_reviewer2_multivariate_cox",
+  "samples_used": 1076,
+  "events": 150,
+  "requested_features": 20,
+  "features_used": 20,
+  "dropped_zero_variance_features": [],
+  "cox_penalizer_used": 0.001,
+  "concordance_index_full_fit": 0.4231548086804086,
+  "log_likelihood": -30113.672004608325,
+  "significant_p_lt_0_05": 14
+}

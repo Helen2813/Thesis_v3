@@ -1,0 +1,24 @@
+{
+  "project_dir": "C:\\Users\\olegk\\Desktop\\Thesis_v3\\01_Causal_feature_extraction",
+  "data_file": "C:\\Users\\olegk\\Desktop\\Thesis_v3\\01_Causal_feature_extraction\\MERGE_continuous_outer\\08_composite.csv",
+  "selected_features_file": "C:\\Users\\olegk\\Desktop\\Thesis_v3\\01_Causal_feature_extraction\\MB\\results_final\\selected_features\\08_composite_features.csv",
+  "feature_source": "selected feature file",
+  "out_dir": "C:\\Users\\olegk\\Desktop\\Thesis_v3\\01_Causal_feature_extraction\\MB\\results_reviewer3_added_value",
+  "settings": {
+    "data_file": null,
+    "selected_features": null,
+    "dataset_name": "08_composite",
+    "event_col": "OS",
+    "duration_col": "OS.time",
+    "out_dir": null,
+    "penalizer": 5.0,
+    "top_n": 20,
+    "n_folds": 5,
+    "seed": 42,
+    "survival_years": 5.0,
+    "scale_for_cox": false
+  },
+  "n_total_after_outcome_filter": 1076,
+  "n_common_complete_cases": 1076,
+  "n_events_common": 150
+}
